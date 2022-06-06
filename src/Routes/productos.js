@@ -49,7 +49,7 @@ router.post('/', async (req, res)=>{
     return res.send({ message: 'Producto agregado exitosamente'})
 })
 
-router.put('/:id', async (req, res)=>{
+/* router.put('/:id', async (req, res)=>{
     try {
         const { id } = req.params;
         const { field, value } = req.body;
@@ -61,52 +61,7 @@ router.put('/:id', async (req, res)=>{
         throw error
     }
     
-})
-export default router
-
-/* const router = express.Router();
-
-let products = []; 
-
- */
-/* let data = JSON.parse(readFileSync('../file/products.txt', 'utf-8')) */
-/* const productService = new Productos('../file/products.txt');
-
-router.get('/', (req, res)=>{
-    res.send(productService.getAllProducts())
-    
-})
-
-router.get('/:id', async (req, res)=>{
-    const { id } = req.params;
-    const idNumber = Number(id);
-
-    if (isNaN(idNumber)) {
-        return res.status(400).send({ error: 'El parámetro debe ser un número' });
-    }
-
-    if (idNumber > productService.length) {
-        return res.status(400).send({ error: 'El parámetro está fuera de rango' });
-    }
-
-    if (idNumber < 0) {
-        return res.status(400).send({ error: 'El parámetro debe ser mayor a cero' });
-    }
-
-    const item = await productService.getId(idNumber);
-
-    if (!item) {
-        return res.status(400).send({ error: `La persona con el id: ${id} no existe` });
-    }
-
-    return res.send(item)
-})
-
-router.post('/', (req, res)=>{
-    let {title, price, thumbnail}= req.body
-    productService.saveProduct({title, price, thumbnail})
-    res.send({message: "Added product"})
-})
+}) */
 
 router.put('/:id', (req, res)=>{
     const idx = this.product.findIndex(p => p.id == id)
@@ -128,4 +83,8 @@ router.delete('/id', (req,res)=>{
             this.product.splice(idx, 1)
             res.json(`Se elimino el producto con id: ${id}`)
         } 
-}) */
+}) 
+export default router
+
+
+
